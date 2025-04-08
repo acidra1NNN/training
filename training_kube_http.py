@@ -30,7 +30,7 @@ def generate_schedule():
     schedule = {}
     start_date = datetime.today()
 
-    # Генерируем расписание на следующие 5 дней
+    # Генерируем расписание на следующие 5 дней ababba
     for i in range(365):
         current_date = start_date + timedelta(days=i)
         formatted_date = current_date.strftime('%Y-%m-%d')
