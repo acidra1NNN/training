@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cef-app-training
+  namespace: cef
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: cef-app-training
+  template:
+    metadata:
+      labels:
+        app: cef-app-training
+    spec:
+      containers:
+      - name: cef-app-training-container
+        image: cefcefcef/cef-app-training-httpv3:v3
+        ports:
+        - containerPort: 15601
+        volumeMounts:
+        - name: tls-volume
+          mountPath: "/certs"
+          readOnly: true
+      volumes:
+      - name: tls-volume
+        secret:
+          secretName: flask-tls-secret

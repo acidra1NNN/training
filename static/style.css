@@ -1,0 +1,162 @@
+/* Полупрозрачный слой поверх фона */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.5); /* Прозрачность можно менять */
+    z-index: -1;
+}
+
+/* Выравнивание заголовков */
+h1, h2 {
+    text-align: center;
+}
+
+/* Стили для календаря */
+#calendar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Стили кнопок */
+button {
+    padding: 10px;
+    cursor: pointer;
+}
+
+/* Стиль для блока "Запись на тренировку" */
+.form-container:first-child {
+    width: 380px; /* Оставляем для блока записи на тренировку */
+    height: auto;
+    margin: 10px;
+    flex-shrink: 0; /* Блок не будет сжиматься */
+}
+
+/* Стиль для блока "Список записавшихся" */
+.form-container:last-child {
+    width: 760px; /* Ширина блока "Список записавшихся" в два раза больше */
+    height: auto;
+    padding: 20px;
+    margin: 10px;
+    flex-shrink: 0; /* Блок не будет сжиматься */
+}
+
+/* Родительский контейнер для форм */
+.form-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 40px; /* Расстояние между формами */
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+/* Стили для списка записавшихся */
+#participants-list {
+    font-size: 14px;  /* Уменьшаем шрифт */
+    line-height: 1.4; /* Читаемость */
+    padding: 8px; /* Немного уменьшить отступы */
+    height: 400px; /* Увеличено для расширения */
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    background: #fafafa;
+    border-radius: 4px;
+    margin-top: 20px;
+}
+
+/* Стили для модального окна */
+.modal {
+    display: none; /* Скрыто по умолчанию */
+    position: fixed;
+    z-index: 9999; /* Над всем контентом */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон */
+    overflow: auto; /* Скроллинг, если окно слишком большое */
+}
+
+/* Контент модального окна */
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 400px; /* Уменьшена ширина окна */
+    text-align: center; /* Центрируем весь текст */
+    position: relative; /* Для абсолютного позиционирования крестика */
+}
+
+/* Крестик для закрытия окна */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #000;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #aaa;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Заголовок внутри модального окна */
+.modal-content h1 {
+    font-size: 22px; /* Уменьшен размер заголовка */
+    font-weight: bold;
+    margin-bottom: 15px; /* Отступ снизу */
+}
+
+/* Абзац текста в модальном окне */
+.modal-content p {
+    font-size: 16px; /* Уменьшение размера шрифта */
+    line-height: 1.5; /* Междустрочный интервал для читаемости */
+    color: #333; /* Цвет текста */
+    margin-top: 10px; /* Отступ сверху */
+}
+
+/* Сдвигаем время вправо */
+.time-block {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Убираем точку из списка */
+ul {
+    list-style-type: none;
+}
+
+ul li {
+    margin-bottom: 5px;
+}
+
+#book, #cancel {
+    margin-right: 10px;  /* Расстояние между кнопками */
+}
+
+.form-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 10px;  /* Отступ между кнопками */
+}
+
+.form-container button:hover {
+    background-color: #45a049;
+}

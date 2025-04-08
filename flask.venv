@@ -1,0 +1,3 @@
+> mkdir training
+> cd > .venv\Scripts\activateC:\training
+> py -3 -m venv .venvpip 
