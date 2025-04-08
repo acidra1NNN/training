@@ -13,7 +13,7 @@ import base64
 app = Flask(__name__, static_url_path="/static")
 CORS(app)
 
-#ALLOWED_REFERER = "https://training.nces.by"
+ALLOWED_REFERER = "https://training.nces.by"
 DATA_PATH = "data/"
 LOGS_PATH = "logs/"
 USERS_FILE = os.path.join(DATA_PATH, "users.csv")
