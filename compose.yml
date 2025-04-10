@@ -1,0 +1,13 @@
+services:
+  server:
+    build:
+      context: C:/projects/web/training
+      dockerfile: Dockerfile
+  web:
+    build:
+      context: C:/projects/web/training
+      dockerfile: static/dockerfile_client.dockerfile
+    ports:
+      - "5000:15601"
+  redis:
+    image: "redis:alpine"

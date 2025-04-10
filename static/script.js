@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (selectedDate) {
             
-                
+                // did fork test
                 // Загружаем доступные времена для выбранной даты
                 fetch(`https://training.nces.by:15601/schedule?date=${selectedDate}`)
                     .then(response => {
