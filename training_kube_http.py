@@ -9,11 +9,14 @@ from cryptography.hazmat.primitives.serialization import pkcs7
 from cryptography.hazmat.backends import default_backend
 from asn1crypto import cms
 import base64
+import time
+import redis
 
 app = Flask(__name__, static_url_path="/static")
+cache = redis.Redis(host='redis', port=6379)
 CORS(app)
 
-ALLOWED_REFERER = "https://training.nces.by"
+#ALLOWED_REFERER = "https://training.nces.by"
 DATA_PATH = "data/"
 LOGS_PATH = "logs/"
 USERS_FILE = os.path.join(DATA_PATH, "users.csv")
@@ -115,14 +118,14 @@ generate_schedule()
 def index():
     return render_template("index.html")
 
-@app.route("/static/<path:filename>")
+@app.route("/api/static/<path:filename>")
 def get_static(filename):
-    referer = request.headers.get("Referer", "")
+    #referer = request.headers.get("Referer", "")
 
     # Запрещаем доступ, если Referer отсутствует или не совпадает
-    if not referer or not referer.startswith(ALLOWED_REFERER):
-        print(f"403 Forbidden: Referer={referer}")  # Логируем
-        abort(403)  # Доступ запрещен
+    #if not referer or not referer.startswith(ALLOWED_REFERER):
+     #   print(f"403 Forbidden: Referer={referer}")  # Логируем
+      #  abort(403)  # Доступ запрещен
 
     return send_from_directory("static", filename)
 

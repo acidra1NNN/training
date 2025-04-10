@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (selectedDate) {
                 // Загружаем доступные времена для выбранной даты
-                fetch(`https://training.nces.by:15601/data/schedule?date=${selectedDate}`)
+                fetch(`http:localhost:15601/data/schedule?date=${selectedDate}`)
                     .then(response => {
                         if (!response.ok) {
                             throw new Error(`Ошибка загрузки: ${response.status}`);
@@ -150,7 +150,7 @@ document.addEventListener("DOMContentLoaded", function () {
 			const cmsSignature = data.cms;
 
 			// 2. Отправляем подписанные данные на сервер Flask
-			return fetch("https://training.nces.by:15601/book", {
+			return fetch("http:localhost:15601/book", {
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
 				body: JSON.stringify({ 

@@ -5,6 +5,7 @@ RUN apk update && apk add git gcc python3-dev linux-headers libffi-dev libc-dev 
 
 # Настройка среды
 ENV PYTHONUNBUFFERED=1
+ENV FLASK_APP=training_kube_http.py
 ENV TZ=Europe/Minsk
 
 # Создаем рабочую директорию
