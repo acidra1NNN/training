@@ -17,8 +17,8 @@ cache = redis.Redis(host='redis', port=6379)
 CORS(app)
 
 #ALLOWED_REFERER = "https://training.nces.by"
-DATA_PATH = "data/"
-LOGS_PATH = "logs/"
+DATA_PATH = "/home/AI/comp/server/data/"
+LOGS_PATH = "/home/AI/comp/server/logs/"
 USERS_FILE = os.path.join(DATA_PATH, "users.csv")
 SCHEDULE_FILE = os.path.join(DATA_PATH, "schedule.json")
 HISTORY_FILE = os.path.join(DATA_PATH, "history.json")

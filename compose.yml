@@ -1,12 +1,14 @@
 services:
   server:
     build:
-      context: C:/projects/web/training
+      context: ./server
       dockerfile: Dockerfile
+    ports:
+      - "15601:15601"
   web:
     build:
-      context: C:/projects/web/training
-      dockerfile: static/dockerfile_client.dockerfile
+      context: ./static
+      dockerfile: Dockerfile
     ports:
       - "5000:15601"
   redis:
